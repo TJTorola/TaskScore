@@ -14,24 +14,21 @@ module.exports = {
 	},
 
 	module: {
-		loader: {
+		loaders: [{
 			test: /\.jsx?$/,
 			exclude: /node_modules/,
-			loader: 'babel',
-			query: {
-				presets: ['es2015', 'react']
-			}
-		}
+			loaders: ['babel']
+		}]
 	},
 
 	resolve: {
-		root: path.resolve('./src'),
+		root: path.resolve("./src"),
 		extensions: ["", ".js", ".jsx" ]
 	},
 
 	plugins: PROD ? [
 		new webpack.DefinePlugin({
-			'process.env':{
+			"process.env":{
 				'NODE_ENV': JSON.stringify('production')
 			}
 		}),
