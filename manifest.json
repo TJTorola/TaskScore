@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+
+	"name": "TaskScore",
+	"description": "A todo list to gamify the daily tasks you need to do.",
+	"version": "0.0.0",
+
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+
+	"permissions": ["tabs"]
+}
