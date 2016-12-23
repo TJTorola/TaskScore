@@ -1,0 +1,19 @@
+{
+  "name": "taskscore",
+  "version": "0.0.0",
+  "description": "A gamified todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TJTorola/TaskScore.git"
+  },
+  "author": "Tyler Torola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TJTorola/TaskScore/issues"
+  },
+  "homepage": "https://github.com/TJTorola/TaskScore#readme"
+}
