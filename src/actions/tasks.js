@@ -3,8 +3,9 @@ export const buildTask = str => ({
 	description: str
 });
 
-export const addTask = (str, int) => ({
+export const addTask = (int, str, int) => ({
 	type: "ADD_TASK",
+	id: int,
 	description: str,
 	created: int
 });

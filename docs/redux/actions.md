@@ -2,7 +2,7 @@
 `{ description }`
 
 `ADD_TASK`
-`{ description, created }`
+`{ id, description, created }`
 
 `FINISH_TASK`
 `{ id }`
