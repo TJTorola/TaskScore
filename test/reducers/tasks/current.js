@@ -9,9 +9,9 @@ import {
 } from 'actions/tasks';
 
 const initial    = reducer(undefined, {}),
-      oneTask    = reducer(init, addTask(0, 'task 1', 1482558947276)),
-      twoTasks   = reducer(init, addTask(1, 'task 2', 1482559482883)),
-      threeTasks = reducer(init, addTask(2, 'task 3', 1482602862321)),
+      oneTask    = reducer(initial, addTask(0, 'task 1', 1482558947276)),
+      twoTasks   = reducer(initial, addTask(1, 'task 2', 1482559482883)),
+      threeTasks = reducer(initial, addTask(2, 'task 3', 1482602862321)),
       expired    = reducer(threeTasks, expireTasks(1482559483883));
 
 test("Initializes with no tasks.", t => {

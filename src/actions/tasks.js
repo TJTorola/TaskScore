@@ -3,9 +3,9 @@ export const buildTask = str => ({
 	description: str
 });
 
-export const addTask = (int, str, int) => ({
+export const addTask = (id, str, int) => ({
 	type: "ADD_TASK",
-	id: int,
+	id: id,
 	description: str,
 	created: int
 });
@@ -28,7 +28,7 @@ export const decrementScore = () => ({
 	type: "DECREMENT_SCORE"
 });
 
-export const expireFinishedTasks = int => ({
-	type: "EXPIRE_FINISHED_TASKS",
+export const expireTasks = int => ({
+	type: "EXPIRE_TASKS",
 	time: int
 });
