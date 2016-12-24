@@ -5,9 +5,11 @@ export const buildTask = str => ({
 
 export const addTask = (int, str, stamp) => ({
 	type: "ADD_TASK",
-	id: int,
-	description: str,
-	created: stamp
+	task: {
+		id: int,
+		description: str,
+		created: stamp
+	}
 });
 
 export const finishTask = int => ({
@@ -17,8 +19,11 @@ export const finishTask = int => ({
 
 export const addFinishedTask = (int, str, stamp) => ({
 	type: "ADD_FINISHED_TASK",
-	description: str,
-	finished: stamp
+	task: {
+		id: int,
+		description: str,
+		finished: stamp
+	}
 });
 
 export const removeTask = int => ({

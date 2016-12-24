@@ -9,10 +9,10 @@ import {
 } from 'actions/tasks';
 
 const initial    = reducer(undefined, {}),
-      oneTask    = reducer(initial, addFinishedTask(0, 'task 1', 1482558947276)),
-      twoTasks   = reducer(initial, addFinishedTask(1, 'task 2', 1482559482883)),
-      threeTasks = reducer(initial, addFinishedTask(2, 'task 3', 1482602862321)),
-      expired    = reducer(threeTasks, expireTasks(1482559483883));
+      oneTask    = reducer(initial, addFinishedTask(0, 'task 1', 1000000000000)),
+      twoTasks   = reducer(oneTask, addFinishedTask(1, 'task 2', 2000000000000)),
+      threeTasks = reducer(twoTasks, addFinishedTask(2, 'task 3', 3000000000000)),
+      expired    = reducer(threeTasks, expireTasks(2500000000000));
 
 test("Initializes with no tasks.", t => {
 	t.is(initial.length, 0);
@@ -28,7 +28,7 @@ test("'ADD_FINISHED_TASK' adds task to finished.", t => {
 });
 
 test("'REMOVE_TASK' doesn't remove task from finished.", t => {
-	const next = reducer(reducer(threeTasks, removeTask(1)));
+	const next = reducer(threeTasks, removeTask(1));
 	t.is(next.length, 3);
 });
 
@@ -41,6 +41,6 @@ test("'EXPIRE_TASKS' doesn't remove tasks after given time.", t => {
 });
 
 test("'EXPIRE_TASKS' doesn't remove tasks equal to given time.", t => {
-	const next = reducer(threeTasks, expireTasks(1482558947276));
-	t.is(expired.length, 3);
+	const next = reducer(threeTasks, expireTasks(1000000000000));
+	t.is(next.length, 3);
 });
