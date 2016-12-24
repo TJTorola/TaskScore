@@ -1,6 +1,6 @@
 import test from 'ava';
 
-
+import reducer from 'reducers/tasks/current'
 
 test.todo("'ADD_TASK' adds to current tasks.");
 test.todo("'FINISH_TASK' removes task from current task.");

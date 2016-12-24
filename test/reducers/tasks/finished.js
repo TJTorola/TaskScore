@@ -1,5 +1,7 @@
 import test from 'ava';
 
+import reducer from 'reducers/tasks/finished'
+
 test.todo("'ADD_TASK' doesn't add to finished.");
 test.todo("'ADD_FINISHED_TASK' adds task to finished.");
 test.todo("'REMOVE_TASK' doesn't remove task from finished.");
