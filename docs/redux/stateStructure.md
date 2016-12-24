@@ -3,10 +3,7 @@ Main State Tree:
 ```
 {
 	tasks: {
-		newTask: {
-			id: 35,
-			desc: ""
-		},
+		nextId: 35,
 		score: 30,
 		current: [ task, task ],
 		finished: [ task ]
