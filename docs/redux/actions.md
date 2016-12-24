@@ -1,7 +1,7 @@
-`NEW_TASK`
+`BUILD_TASK`
 `{ description }`
 
-`SET_TASK`
+`ADD_TASK`
 `{ description, created }`
 
 `FINISH_TASK`
