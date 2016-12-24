@@ -3,16 +3,22 @@ export const buildTask = str => ({
 	description: str
 });
 
-export const addTask = (id, str, int) => ({
+export const addTask = (int, str, stamp) => ({
 	type: "ADD_TASK",
-	id: id,
+	id: int,
 	description: str,
-	created: int
+	created: stamp
 });
 
 export const finishTask = int => ({
 	type: "FINISH_TASK",
 	id: int
+});
+
+export const addFinishedTask = (int, str, stamp) => ({
+	type: "ADD_FINISHED_TASK",
+	description: str,
+	finished: stamp
 });
 
 export const removeTask = int => ({

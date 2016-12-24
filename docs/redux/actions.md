@@ -7,6 +7,9 @@
 `FINISH_TASK`
 `{ id }`
 
+`ADD_FINISHED_TASK`
+{ id, description, finished }`
+
 `REMOVE_TASK`
 `{ id }`
 
@@ -14,5 +17,5 @@
 
 `DECREMENT_SCORE`
 
-`EXPIRE_FINISHED_TASKS`
+`EXPIRE_TASKS`
 `{ time }`
