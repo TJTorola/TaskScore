@@ -9,10 +9,10 @@ import {
 } from 'actions/tasks';
 
 const initial    = reducer(undefined, {}),
-      oneTask    = reducer(initial, addTask(0, 'task 1', 1482558947276)),
-      twoTasks   = reducer(initial, addTask(1, 'task 2', 1482559482883)),
-      threeTasks = reducer(initial, addTask(2, 'task 3', 1482602862321)),
-      expired    = reducer(threeTasks, expireTasks(1482559483883));
+      oneTask    = reducer(initial, addTask(0, 'task 1', 1000000000000)),
+      twoTasks   = reducer(oneTask, addTask(1, 'task 2', 2000000000000)),
+      threeTasks = reducer(twoTasks, addTask(2, 'task 3', 3000000000000)),
+      expired    = reducer(threeTasks, expireTasks(2500000000000));
 
 test("Initializes with no tasks.", t => {
 	t.is(initial.length, 0);
@@ -39,7 +39,7 @@ test("'REMOVE_TASK' removes task from current task.", t => {
 
 test("'REMOVE_TASK' does nothing without found ID.", t => {
 	const next = reducer(oneTask, removeTask(3));
-	t.is(next.length, 0);
+	t.is(next.length, 1);
 });
 
 test("'EXPIRE_TASKS' removes all old tasks before given time.", t => {
@@ -51,7 +51,7 @@ test("'EXPIRE_TASKS' doesn't remove tasks after given time.", t => {
 });
 
 test("'EXPIRE_TASKS' doesn't remove tasks equal to given time.", t => {
-	const next = reducer(threeTasks, expireTasks(1482558947276));
-	t.is(expired.length, 3);
+	const next = reducer(threeTasks, expireTasks(1000000000000));
+	t.is(next.length, 3);
 });
 
