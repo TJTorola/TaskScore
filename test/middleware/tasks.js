@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { middlewareSpies } from '../helpers';
+import { middlewareSpies } from 'lib/test';
 import tasks from 'middleware/tasks';
 import {
 	buildTask,
