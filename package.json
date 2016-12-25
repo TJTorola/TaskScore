@@ -1,9 +1,10 @@
 {
   "name": "taskscore",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A gamified todo list",
   "main": "index.js",
   "scripts": {
+    "build": "PROD_ENV='true' webpack -p",
     "test": "NODE_PATH=src ava"
   },
   "repository": {
