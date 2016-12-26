@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default ({ children }) => (
-	<li>{ children }</li>
+export default task => (
+	<li key={ task.id }>{ task.description }</li>
 );

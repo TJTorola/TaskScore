@@ -1,3 +1,7 @@
 import { applyMiddleware } from 'redux';
 
-export default applyMiddleware();
+import tasks from 'middleware/tasks';
+
+export default applyMiddleware(
+	tasks
+);

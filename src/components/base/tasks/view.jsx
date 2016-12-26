@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NewTask from './newTask/view';
-import List from './list/view';
+import NewTask from './newTask/container';
+import List from './list/container';
 
 export default () => (
 	<div>

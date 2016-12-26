@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 
 import View from './view';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+	tasks: state.tasks.current
+});
 
 const mapDispatchToProps = dispatch => ({});
 
