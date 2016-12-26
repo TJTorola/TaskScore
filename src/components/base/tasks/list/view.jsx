@@ -2,8 +2,8 @@ import React from 'react';
 
 import ListItem from './listItem';
 
-export default ({ tasks }) => (
+export default ({ tasks, finishTask }) => (
 	<ul>
-		{ tasks.map(ListItem) }
+		{ tasks.map(ListItem(finishTask)) }
 	</ul>
 );
