@@ -1,3 +1,7 @@
 import React from 'react';
 
-export default () => <div>App</div>;
+import Tasks from './tasks/view';
+
+export default () => <div>
+	<Tasks />
+</div>;
