@@ -16,6 +16,15 @@ const finishTask = ({ dispatch, getState }, { id }) => {
 	}
 }
 
+const unfinishTask = ({ dispatch, getState }, { id }) => {
+	const { tasks: { finished } } = getState(),
+	      task = finished.find(task => task.id === id);
+
+	if (task) {
+		dispatch(addTask(id, task.description, task.finished));
+	}
+}
+
 export default store => next => action => {
 	switch (action.type) {
 		case "BUILD_TASK":
@@ -23,6 +32,9 @@ export default store => next => action => {
 			break;
 		case "FINISH_TASK":
 			finishTask(store, action);
+			break;
+		case "UNFINISH_TASK":
+			unfinishTask(store, action);
 			break;
 	}
 	return next(action);

@@ -3,6 +3,9 @@ export default (state = [], action) => {
 		case "ADD_FINISHED_TASK":
 			return [ ...state, action.task ];
 
+		case "UNFINISH_TASK":
+			return state.filter(task => task.id !== action.id);
+
 		case "EXPIRE_TASKS":
 			return state.filter(task => task.finished >= action.time);
 	}
