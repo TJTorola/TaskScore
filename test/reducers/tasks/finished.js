@@ -5,7 +5,8 @@ import {
 	addTask,
 	addFinishedTask,
 	removeTask,
-	expireTasks
+	expireTasks,
+	unfinishTask
 } from 'actions/tasks';
 
 const initial    = reducer(undefined, {}),
@@ -45,5 +46,12 @@ test("'EXPIRE_TASKS' doesn't remove tasks equal to given time.", t => {
 	t.is(next.length, 3);
 });
 
-test.todo("'UNFINISH_TASK' removes found task from finished.");
-test.todo("'UNFINISH_TASK' has no effect if task is not found.");
+test("'UNFINISH_TASK' removes found task from finished.", t => {
+	const next = reducer(threeTasks, unfinishTask(1));
+	t.is(next.length, 2);
+});
+
+test("'UNFINISH_TASK' has no effect if task is not found.", t => {
+	const next = reducer(threeTasks, unfinishTask(5));
+	t.is(next.length, 3);
+});

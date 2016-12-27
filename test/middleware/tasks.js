@@ -4,7 +4,8 @@ import { middlewareSpies } from 'lib/test';
 import tasks from 'middleware/tasks';
 import {
 	buildTask,
-	finishTask
+	finishTask,
+	unfinishTask
 } from 'actions/tasks';
 
 
@@ -63,6 +64,23 @@ test("'FINISH_TASK' does nothing if no task found.", t => {
 	t.false(dispatch.called);
 });
 
-test.todo("'UNFINISH_TASK' dispatch 'ADD_TASK' if task is found in finished.");
-test.todo("'UNFINISH_TASK' does nothing if no task is found in finished.");
-test.todo("'UNFINISH_TASK' keeps finished time as created time.");
+test("'UNFINISH_TASK' dispatch 'ADD_TASK' if task is found in finished.", t => {
+	const { middleware, store: { dispatch } } = generateSpies();
+
+	middleware(unfinishTask(2));
+	t.is(dispatch.args[0][0].type, "ADD_TASK");
+});
+
+test("'UNFINISH_TASK' does nothing if no task is found in finished.", t => {
+	const { middleware, store: { dispatch } } = generateSpies();
+
+	middleware(unfinishTask(1));
+	t.false(dispatch.called);
+});
+
+test("'UNFINISH_TASK' keeps finished time as created time.", t => {
+	const { middleware, store: { dispatch } } = generateSpies();
+
+	middleware(unfinishTask(2));
+	t.is(dispatch.args[0][0].task.created, 1482605650233);
+});
