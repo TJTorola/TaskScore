@@ -6,7 +6,7 @@ import configureStore from 'store/localStorage';
 import initialize from 'store/initialize';
 
 const store = configureStore();
-intialize(store);
+initialize(store);
 
 export default () => (
 	<Provider store={ store }>
