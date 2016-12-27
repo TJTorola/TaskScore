@@ -12,3 +12,7 @@ cp favicon.ico build
 cp manifest.json build
 cp img/* build/img
 cp bundle.* build
+cp key.pem build
+
+cd build
+zip -r TaskScore.zip ./*
