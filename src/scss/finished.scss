@@ -1,4 +1,19 @@
 #Finished {
+	float: right;
+	margin: 40px;
+	width: 250px;
+	text-align: right;
+
+	h1 {
+		margin: 0;
+		font-size: 97px;
+		font-weight: 100;
+
+		&:before {
+			content: "• ";
+		}
+	}
+
 	li {
 		&:after {
 			content: " - X";

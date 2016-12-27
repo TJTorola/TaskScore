@@ -4,7 +4,7 @@ import Score from './score/container';
 import Tasks from './tasks/container';
 
 export default () => (
-	<div>
+	<div id="Finished">
 		<Score />
 		<Tasks />
 	</div>

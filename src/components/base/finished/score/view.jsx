@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default ({ score }) => (
-	<div>{ score }</div>
+	<h1>{ score }</h1>
 );
