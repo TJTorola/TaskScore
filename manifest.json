@@ -5,6 +5,12 @@
 	"description": "A todo list to gamify the daily tasks you need to do.",
 	"version": "0.0.0",
 
+	"icons": {
+		"16": "favicon.ico",
+		"48": "img/logo-48.png",
+		"128": "img/logo-128.png"
+	},
+
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
