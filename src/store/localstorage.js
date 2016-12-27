@@ -1,17 +1,31 @@
+import configureStore from './configure';
+
 const STATE_KEY = "taskScore";
 
-export const load = () => {
+const load = () => {
 	try {
-		const serialState = localstorage.getItem(STATE_KEY);
+		const serialState = localStorage.getItem(STATE_KEY);
 		if (serialState) return JSON.parse(serialState);
 	} catch (e) {}
 
 	return {};
-}
+};
 
-export const save = state => {
+const save = state => {
 	try {
 		const serialState = JSON.stringify(state);
-		localstorage.setItem(STATE_KEY);
+		localStorage.setItem(STATE_KEY, serialState);
 	} catch (e) {}
-}
+};
+
+export default () => {
+	const store = configureStore(load()),
+	      { getState } = store;
+
+	const storeState = () => {
+		save(getState());
+	}
+	store.subscribe(storeState);
+
+	return store;
+};
