@@ -62,3 +62,7 @@ test("'FINISH_TASK' does nothing if no task found.", t => {
 	middleware(finishTask(1));
 	t.false(dispatch.called);
 });
+
+test.todo("'UNFINISH_TASK' dispatch 'ADD_TASK' if task is found in finished.");
+test.todo("'UNFINISH_TASK' does nothing if no task is found in finished.");
+test.todo("'UNFINISH_TASK' keeps finished time as created time.");

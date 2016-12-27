@@ -17,6 +17,11 @@ export const finishTask = int => ({
 	id: int
 });
 
+export const unfinishTask = int => ({
+	type: "UNFINISH_TASK",
+	id: int
+});
+
 export const addFinishedTask = (int, str, stamp) => ({
 	type: "ADD_FINISHED_TASK",
 	task: {

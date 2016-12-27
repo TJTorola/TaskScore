@@ -44,3 +44,6 @@ test("'EXPIRE_TASKS' doesn't remove tasks equal to given time.", t => {
 	const next = reducer(threeTasks, expireTasks(1000000000000));
 	t.is(next.length, 3);
 });
+
+test.todo("'UNFINISH_TASK' removes found task from finished.");
+test.todo("'UNFINISH_TASK' has no effect if task is not found.");
