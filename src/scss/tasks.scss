@@ -1,4 +1,14 @@
 #Tasks {
+	margin: 40px;
+	width: 250px;
+
+	input {
+		width: 100%;
+		border: 0;
+		border-bottom: 1px solid gray;
+		padding: 10px;
+	}
+
 	li {
 		&:before {
 			content: "0 - ";
