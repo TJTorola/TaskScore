@@ -4,7 +4,7 @@ import NewTask from './newTask/container';
 import List from './list/container';
 
 export default () => (
-	<div>
+	<div id="Tasks">
 		<NewTask />
 		<List />
 	</div>
