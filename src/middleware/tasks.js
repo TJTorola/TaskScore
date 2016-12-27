@@ -1,4 +1,8 @@
-import { addTask, addFinishedTask } from 'actions/tasks';
+import { 
+	addTask,
+	addFinishedTask,
+	decrementScore
+} from 'actions/tasks';
 
 const buildTask = ({ dispatch, getState }, { description }) => {
 	const { tasks: { nextId } } = getState(),
@@ -22,6 +26,7 @@ const unfinishTask = ({ dispatch, getState }, { id }) => {
 
 	if (task) {
 		dispatch(addTask(id, task.description, task.finished));
+		dispatch(decrementScore());
 	}
 }
 

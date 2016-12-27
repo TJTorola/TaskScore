@@ -88,3 +88,10 @@ test("'UNFINISH_TASK' keeps finished time as created time.", t => {
 	middleware(unfinishTask(3));
 	t.is(dispatch.args[0][0].task.created, 1572873827813);
 });
+
+test("'UNFINISH_TASK' dispatches 'DECREMENT_SCORE' if task is found.", t => {
+	const { middleware, store: { dispatch } } = generateSpies();
+
+	middleware(unfinishTask(3));
+	t.is(dispatch.args[1][0].type, 'DECREMENT_SCORE');
+});

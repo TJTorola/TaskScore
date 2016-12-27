@@ -16,3 +16,6 @@ export const middlewareSpies = (mockState, middleware) => {
 		store, next
 	};
 };
+
+// TODO: Write helpers to extract spy info in a more flexable way.
+//   EX: extractDispatchTypes() => ['DECREMENT_SCORE', 'ADD_TASK', ...]

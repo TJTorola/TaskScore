@@ -4,7 +4,7 @@ import reducer from 'reducers/tasks/score';
 import { 
 	incramentScore,
 	decrementScore,
-	addFinishedTask,
+	addFinishedTask
 } from 'actions/tasks';
 
 const initial     = reducer(undefined, {}),
