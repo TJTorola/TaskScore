@@ -3,7 +3,7 @@
 
 	"name": "TaskScore",
 	"description": "A todo list to gamify the daily tasks you need to do.",
-	"version": "0.0.0",
+	"version": "0.1.0",
 
 	"icons": {
 		"16": "favicon.ico",
