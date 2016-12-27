@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Input from 'components/modules/mdInput/main';
+
 const submit = buildTask => e => {
 	if (e.charCode !== 13) return;
 
@@ -8,5 +10,7 @@ const submit = buildTask => e => {
 };
 
 export default ({ buildTask }) => (
-	<input type="text" onKeyPress={ submit(buildTask) } />
+	<Input type="text" 
+	       onKeyPress={ submit(buildTask) } 
+	       placeholder="+ Add New Task" />
 );
