@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default task => (
-	<li key={ task.id }>{ task.description }</li>
+export default unfinishTask => task => (
+	<li key={ task.id } onClick={ unfinishTask(task.id) }>{ task.description }</li>
 );

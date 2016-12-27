@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 
 import View from './view';
-import { finishTask } from 'actions/tasks';
+import { unfinishTask } from 'actions/tasks';
 
 const mapStateToProps = state => ({
 	tasks: state.tasks.finished
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+	unfinishTask: id => () => dispatch(unfinishTask(id))
+});
 
 export default connect(
   mapStateToProps,
