@@ -8,7 +8,6 @@ const handleRemove = removeTask => e => {
 export default (finishTask, removeTask) => task => (
 	<li key={ task.id } onClick={ finishTask(task.id) }>
 		{ task.description }&nbsp;
-		<span className="remove" 
-		      onClick={ handleRemove(removeTask(task.id)) }>X</span>
+		<span className="remove" onClick={ handleRemove(removeTask(task.id)) }>X</span>
 	</li>
 );
