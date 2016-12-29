@@ -4,6 +4,7 @@
 	"name": "TaskScore",
 	"description": "A todo list to gamify the daily tasks you need to do.",
 	"version": "0.1.0",
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArwifFi9ur15WXcf1b70jc5u42fv3dvCS+Znl9SnxCtGIq5bGag8Y5pVSAePwHGYZo1NsY7nsbsaTi9KLACFsCVhMCyissltyWazkcY6DwUlyQkjYGNWlfYytskXB+QnMv1HOZ5UIRY5E72JxphG8nDB0L0LJmwldgpRogoZd9VRoVfs5iQ5sShWDiYhKFHbIMB7xFBzauFQcpgBDWMca/51ZiR0/DNPsI+ndogWZsrImmkqjxI/Kt3Eve/s0Y7XEq7mHRUDv5kA45pBaqIIMtVy8ZVrXS4Ez/k8x8ENf4l5ryJ6uMPoIo50zi4JNTIlyHWGr1T5DUDxK4lYeQ7r8lQIDAQAB",
 
 	"icons": {
 		"16": "favicon.ico",
@@ -15,5 +16,5 @@
 		"newtab": "index.html"
 	},
 
-	"permissions": ["tabs"]
+	"permissions": [ "tabs", "storage" ]
 }
